@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SimpleCellLayout/SimpleCellLayout.iml" filepath="$PROJECT_DIR$/SimpleCellLayout/SimpleCellLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpleCellLayoutProject.iml" filepath="$PROJECT_DIR$/SimpleCellLayoutProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpleCellLayoutSample/SimpleCellLayoutSample.iml" filepath="$PROJECT_DIR$/SimpleCellLayoutSample/SimpleCellLayoutSample.iml" />
+    </modules>
+  </component>
+</project>
+
