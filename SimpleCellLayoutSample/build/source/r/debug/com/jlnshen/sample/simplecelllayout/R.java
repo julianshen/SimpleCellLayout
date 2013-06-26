@@ -86,8 +86,9 @@ public final class R {
     }
 
     public static final class id {
-        public static final int action_settings = 0x7f080002;
+        public static final int action_settings = 0x7f080003;
         public static final int celllayout = 0x7f080000;
+        public static final int imageView = 0x7f080002;
         public static final int test1 = 0x7f080001;
     }
 

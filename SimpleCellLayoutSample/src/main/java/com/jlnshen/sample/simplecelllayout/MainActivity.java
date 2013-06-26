@@ -89,6 +89,9 @@ public class MainActivity extends Activity {
         imageView5.setBackgroundColor(Color.MAGENTA);
         layout.addView(imageView5);
         Picasso.with(this).load(photos[4]).fit().into(imageView5);
+
+        ImageView imageView6 = (ImageView) findViewById(R.id.imageView);
+        Picasso.with(this).load(photos[6]).fit().into(imageView6);
     }
 
     @Override
