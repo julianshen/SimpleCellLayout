@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <declare-styleable name="SimpleCellLayout">
+        <attr name="col" format="integer"/>
+        <attr name="row" format="integer"/>
+        <attr name="gapsize" format="dimension"/>
+        <attr name="colspan" format="integer"/>
+        <attr name="rowspan" format="integer"/>
+        <attr name="cellX" format="integer"/>
+        <attr name="cellY" format="integer"/>
+    </declare-styleable>
+
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 

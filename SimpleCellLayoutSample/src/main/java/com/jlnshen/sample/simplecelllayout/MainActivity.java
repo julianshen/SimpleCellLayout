@@ -33,7 +33,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         SimpleCellLayout layout = (SimpleCellLayout) findViewById(R.id.celllayout);
-        layout.setGap(3);
 
 
         ImageView imageView1 = new ImageView(this);

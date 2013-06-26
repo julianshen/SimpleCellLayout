@@ -1,6 +1,7 @@
 package com.jlnshen.widget.celllayout;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +19,33 @@ public class SimpleCellLayout extends ViewGroup {
 
     public SimpleCellLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        initFromAttributes(context, attrs);
     }
 
     public SimpleCellLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+
+        initFromAttributes(context, attrs);
+    }
+
+    private void initFromAttributes(Context context, AttributeSet attrs) {
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SimpleCellLayout);
+        for (int i = 0; i < a.getIndexCount(); i++) {
+            int attr = a.getIndex(i);
+
+            switch (attr) {
+                case R.styleable.SimpleCellLayout_col:
+                    mColCount = a.getInt(attr, mColCount);
+                    break;
+                case R.styleable.SimpleCellLayout_row:
+                    mRowCount = a.getInt(attr, mRowCount);
+                    break;
+                case R.styleable.SimpleCellLayout_gapsize:
+                    mGap = a.getDimensionPixelSize(attr, mGap);
+                    break;
+            }
+        }
     }
 
     public void setColumnCount(int col) {
@@ -51,6 +75,11 @@ public class SimpleCellLayout extends ViewGroup {
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
         return new CellLayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+    }
+
+    @Override
+    public LayoutParams generateLayoutParams(AttributeSet attrs) {
+        return new CellLayoutParams(getContext(), attrs);
     }
 
     @Override
@@ -132,6 +161,38 @@ public class SimpleCellLayout extends ViewGroup {
 
         public CellLayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
+
+            TypedArray a = c.obtainStyledAttributes(attrs, R.styleable.SimpleCellLayout);
+            for (int i = 0; i < a.getIndexCount(); i++) {
+                int attr = a.getIndex(i);
+
+                switch (attr) {
+                    case R.styleable.SimpleCellLayout_colspan:
+                        cellColSpan = a.getInt(attr, cellColSpan);
+                        if (cellColSpan < 1) {
+                            cellColSpan = 1;
+                        }
+                        break;
+                    case R.styleable.SimpleCellLayout_rowspan:
+                        cellRowSpan = a.getInt(attr, cellRowSpan);
+                        if (cellRowSpan < 1) {
+                            cellRowSpan = 1;
+                        }
+                        break;
+                    case R.styleable.SimpleCellLayout_cellX:
+                        cellX = a.getInt(attr, cellX);
+                        if (cellX < 0) {
+                            cellX = 0;
+                        }
+                        break;
+                    case R.styleable.SimpleCellLayout_cellY:
+                        cellY = a.getInt(attr, cellY);
+                        if (cellY < 0) {
+                            cellY = 0;
+                        }
+                        break;
+                }
+            }
         }
 
         public CellLayoutParams(int width, int height) {
