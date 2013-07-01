@@ -99,6 +99,22 @@ public class SimpleCellLayout extends ViewGroup {
         int cellWidth = usableWidth / mColCount;
         int cellHeight = usableHeight / mRowCount;
 
+        int remainingWidth = usableWidth % mColCount;
+        int remainingHeight = usableHeight % mRowCount;
+
+        CellInfo[][] cells = new CellInfo[mRowCount][mColCount];
+
+        for (int i = 0; i < mRowCount; i++) {
+            for (int j = 0; j < mColCount; j++) {
+                CellInfo cell = new CellInfo();
+                cell.left = j * (cellWidth + mGap) + (j < remainingWidth ? j : remainingWidth);
+                cell.top = i * (cellHeight + mGap) + (i < remainingHeight ? i : remainingHeight);
+                cell.right = cell.left + cellWidth + (j < remainingWidth ? 1 : 0);
+                cell.bottom = cell.top + cellHeight + (i < remainingHeight ? 1 : 0);
+                cells[i][j] = cell;
+            }
+        }
+
         //measure children
         int childrCnt = getChildCount();
         for (int i = 0; i < childrCnt; i++) {
@@ -113,25 +129,21 @@ public class SimpleCellLayout extends ViewGroup {
                 params.cellRowSpan = 1;
             }
 
-            int childWidth = cellWidth * params.cellColSpan;
-            int childHeight = cellHeight * params.cellRowSpan;
+            int left = cells[params.cellY][params.cellX].left;
+            int top = cells[params.cellY][params.cellX].top;
 
-            if (params.cellColSpan > 1) {
-                childWidth += (params.cellColSpan - 1) * mGap;
-            }
+            int right = cells[params.cellY + params.cellRowSpan - 1][params.cellX + params.cellColSpan - 1].right;
+            int bottom = cells[params.cellY + params.cellRowSpan - 1][params.cellX + params.cellColSpan - 1].bottom;
 
-            if (params.cellRowSpan > 1) {
-                childHeight += (params.cellRowSpan - 1) * mGap;
-            }
+            int childWidth = right - left + 1;
+            int childHeight = bottom - top + 1;
 
             int childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(childWidth, MeasureSpec.EXACTLY);
             int childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(childHeight, MeasureSpec.EXACTLY);
 
             child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
 
-            int x = params.cellX * cellWidth + params.cellX * mGap + params.leftMargin;
-            int y = params.cellY * cellHeight + params.cellY * mGap + params.topMargin;
-            params.saveMeasureResult(x, y, childWidth, childHeight);
+            params.saveMeasureResult(left, top, childWidth, childHeight);
         }
 
         setMeasuredDimension(widthMeasureSpecSize, heightMeasureSpecSize);
@@ -213,5 +225,12 @@ public class SimpleCellLayout extends ViewGroup {
             this.width = width;
             this.height = height;
         }
+    }
+
+    public static class CellInfo {
+        int left;
+        int top;
+        int right;
+        int bottom;
     }
 }

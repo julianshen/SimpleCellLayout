@@ -1,13 +1,9 @@
 package com.jlnshen.sample.simplecelllayout;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.jlnshen.widget.celllayout.SimpleCellLayout;
 import com.squareup.picasso.Picasso;
 
 public class MainActivity extends Activity {
@@ -32,73 +28,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SimpleCellLayout layout = (SimpleCellLayout) findViewById(R.id.celllayout);
+        int[] imageViewIds = new int[]{R.id.imageView1, R.id.imageView2, R.id.imageView3, R.id.imageView4};
+        int i = 0;
 
+        for (int res_id : imageViewIds) {
+            ImageView imageView = (ImageView) findViewById(res_id);
+            Picasso.with(this).load(photos[i++]).fit().into(imageView);
+        }
 
-        ImageView imageView1 = new ImageView(this);
-        SimpleCellLayout.CellLayoutParams layoutParams1 = new SimpleCellLayout.CellLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        layoutParams1.cellX = 0;
-        layoutParams1.cellY = 0;
-        layoutParams1.cellRowSpan = 2;
-        layoutParams1.cellColSpan = 2;
-
-        imageView1.setLayoutParams(layoutParams1);
-        imageView1.setBackgroundColor(Color.BLUE);
-        layout.addView(imageView1);
-        Picasso.with(this).load(photos[0]).fit().into(imageView1);
-
-        ImageView imageView2 = new ImageView(this);
-        SimpleCellLayout.CellLayoutParams layoutParams2 = new SimpleCellLayout.CellLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        layoutParams2.cellX = 2;
-        layoutParams2.cellY = 0;
-        layoutParams2.cellColSpan = 2;
-
-        imageView2.setLayoutParams(layoutParams2);
-        imageView2.setBackgroundColor(Color.GREEN);
-        layout.addView(imageView2);
-        Picasso.with(this).load(photos[1]).fit().into(imageView2);
-
-        ImageView imageView3 = new ImageView(this);
-        SimpleCellLayout.CellLayoutParams layoutParams3 = new SimpleCellLayout.CellLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        layoutParams3.cellX = 2;
-        layoutParams3.cellY = 1;
-
-        imageView3.setLayoutParams(layoutParams3);
-        imageView3.setBackgroundColor(Color.YELLOW);
-        layout.addView(imageView3);
-        Picasso.with(this).load(photos[2]).fit().into(imageView3);
-
-        ImageView imageView4 = new ImageView(this);
-        SimpleCellLayout.CellLayoutParams layoutParams4 = new SimpleCellLayout.CellLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        layoutParams4.cellX = 3;
-        layoutParams4.cellY = 1;
-
-        imageView4.setLayoutParams(layoutParams4);
-        imageView4.setBackgroundColor(Color.RED);
-        layout.addView(imageView4);
-        Picasso.with(this).load(photos[3]).fit().into(imageView4);
-
-        ImageView imageView5 = new ImageView(this);
-        SimpleCellLayout.CellLayoutParams layoutParams5 = new SimpleCellLayout.CellLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        layoutParams5.cellX = 0;
-        layoutParams5.cellY = 2;
-        layoutParams5.cellRowSpan = 2;
-        layoutParams5.cellColSpan = 4;
-
-        imageView5.setLayoutParams(layoutParams5);
-        imageView5.setBackgroundColor(Color.MAGENTA);
-        layout.addView(imageView5);
-        Picasso.with(this).load(photos[4]).fit().into(imageView5);
-
-        ImageView imageView6 = (ImageView) findViewById(R.id.imageView);
-        Picasso.with(this).load(photos[6]).fit().into(imageView6);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
     }
 
 }
