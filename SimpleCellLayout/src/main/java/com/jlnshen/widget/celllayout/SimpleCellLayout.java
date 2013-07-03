@@ -46,6 +46,8 @@ public class SimpleCellLayout extends ViewGroup {
                     break;
             }
         }
+
+        a.recycle();
     }
 
     public void setColumnCount(int col) {
@@ -205,6 +207,8 @@ public class SimpleCellLayout extends ViewGroup {
                         break;
                 }
             }
+
+            a.recycle();
         }
 
         public CellLayoutParams(int width, int height) {
