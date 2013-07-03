@@ -1,7 +1,10 @@
 package com.jlnshen.sample.simplecelllayout;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -38,4 +41,12 @@ public class MainActivity extends Activity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuItem item = menu.add("CollagePager Demo");
+
+        Intent intent = new Intent(this, CollagePagerDemoActivity.class);
+        item.setIntent(intent);
+        return super.onCreateOptionsMenu(menu);
+    }
 }

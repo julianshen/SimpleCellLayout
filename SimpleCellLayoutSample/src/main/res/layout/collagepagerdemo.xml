@@ -1,0 +1,12 @@
+<com.jlnshen.widget.collagepager.CollagePager xmlns:android="http://schemas.android.com/apk/res/android"
+                                              xmlns:tools="http://schemas.android.com/tools"
+                                              xmlns:celllayout="http://schemas.android.com/apk/res-auto"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="match_parent"
+                                              android:padding="3dp"
+                                              celllayout:gapsize="3dp"
+                                              android:id="@+id/collagePager"
+                                              tools:context=".CollagePagerDemoActivity">
+
+
+</com.jlnshen.widget.collagepager.CollagePager>
