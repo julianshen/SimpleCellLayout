@@ -88,7 +88,6 @@ class CollagePagerAdapter extends PagerAdapter {
             ArrayList<PageInfo> newPages = makePages(itemCnt);
 
             pages = newPages;
-            pages.clear();
         } else { //Need tests
             PageInfo lastPage = pages.get(pages.size() - 1);
             int oldItemCnt = lastPage.cellCnt + lastPage.firstIndex;
