@@ -3,6 +3,9 @@ package com.jlnshen.sample.simplecelllayout;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -42,18 +45,51 @@ public class CollagePagerDemoActivity extends Activity {
             "http://www.hollywoodreporter.com/sites/default/files/imagecache/thumbnail_570x321/2012/11/doctor_who_snowmen_a_l_0.jpg"
     };
 
+    MyAdapter myAdapter = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.collagepagerdemo);
 
         CollagePager pager = (CollagePager) findViewById(R.id.collagePager);
-        pager.setAdapter(new MyAdapter(this));
+        myAdapter = new MyAdapter(this);
+        pager.setAdapter(myAdapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuItem item1 = menu.add("Increase items");
+        MenuItem item2 = menu.add("Decrease items");
+
+        item1.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                int i = (int) (System.currentTimeMillis() % 10) + 1;
+                myAdapter.setSize(myAdapter.mSize + i);
+                return true;
+            }
+        });
+
+        item2.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                int i = (int) (System.currentTimeMillis() % 10) + 1;
+                int newSize = myAdapter.mSize - i;
+                newSize = newSize < 0 ? 0 : newSize;
+                myAdapter.setSize(newSize);
+
+                return true;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     static class MyAdapter extends BaseAdapter {
 
         Context mContext;
+        int mSize = 10;
 
         MyAdapter(Context context) {
             mContext = context;
@@ -61,7 +97,7 @@ public class CollagePagerDemoActivity extends Activity {
 
         @Override
         public int getCount() {
-            return 933;
+            return mSize;
         }
 
         @Override
@@ -88,6 +124,12 @@ public class CollagePagerDemoActivity extends Activity {
             Picasso.with(mContext).load((String) getItem(i)).fit().into(imageView);
 
             return imageView;
+        }
+
+        public void setSize(int size) {
+            mSize = size;
+            Log.d("AAAA", "item size: " + mSize);
+            notifyDataSetChanged();
         }
     }
 }

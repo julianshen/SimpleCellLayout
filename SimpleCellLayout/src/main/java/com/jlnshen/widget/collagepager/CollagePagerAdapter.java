@@ -1,5 +1,6 @@
 package com.jlnshen.widget.collagepager;
 
+import android.database.DataSetObserver;
 import android.support.v4.view.PagerAdapter;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -46,11 +47,13 @@ class CollagePagerAdapter extends PagerAdapter {
     private ListAdapter mListAdapter = null;
     private ArrayList<PageInfo> pages = new ArrayList<PageInfo>();
     private int mGap;
+    private ListAdapterObserver mObserver = new ListAdapterObserver();
 
     CollagePagerAdapter(ListAdapter listAdapter, int gap) {
         super();
         mGap = gap;
         mListAdapter = listAdapter;
+        mListAdapter.registerDataSetObserver(mObserver);
         notifyDataSetChanged();
     }
 
@@ -68,6 +71,7 @@ class CollagePagerAdapter extends PagerAdapter {
 
     void setListAdapter(ListAdapter listAdapter) {
         mListAdapter = listAdapter;
+        mListAdapter.registerDataSetObserver(mObserver);
         notifyDataSetChanged();
     }
 
@@ -190,6 +194,23 @@ class CollagePagerAdapter extends PagerAdapter {
     }
 
     @Override
+    public int getItemPosition(Object object) {
+        PageInfo pageInfo = (PageInfo) object;
+
+        if (pageInfo.page_no >= pages.size()) {
+            return POSITION_NONE;
+        }
+
+        PageInfo newPageInfo = pages.get(pageInfo.page_no);
+
+        if (pageInfo != newPageInfo) {
+            return POSITION_NONE;
+        }
+
+        return super.getItemPosition(object);
+    }
+
+    @Override
     public Object instantiateItem(ViewGroup container, int position) {
         if (pages.size() < position) {
             return null;
@@ -293,5 +314,17 @@ class CollagePagerAdapter extends PagerAdapter {
         int firstIndex = 0;
         SimpleCellLayout container = null;
         FrameLayout[] cells = null;
+    }
+
+    private class ListAdapterObserver extends DataSetObserver {
+        @Override
+        public void onChanged() {
+            notifyDataSetChanged();
+        }
+
+        @Override
+        public void onInvalidated() {
+            notifyDataSetChanged();
+        }
     }
 }
