@@ -3,6 +3,7 @@ package com.jlnshen.sample.simplecelllayout;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,6 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.jlnshen.widget.collagepager.CollagePager;
+import com.jlnshen.widget.collagepager.ZoomFlyPageTransformer;
 import com.squareup.picasso.Picasso;
 
 public class CollagePagerDemoActivity extends Activity {
@@ -54,6 +56,7 @@ public class CollagePagerDemoActivity extends Activity {
 
         CollagePager pager = (CollagePager) findViewById(R.id.collagePager);
         myAdapter = new MyAdapter(this);
+        pager.setPageTransformer(false, new ZoomFlyPageTransformer());
         pager.setAdapter(myAdapter);
     }
 
@@ -89,7 +92,7 @@ public class CollagePagerDemoActivity extends Activity {
     static class MyAdapter extends BaseAdapter {
 
         Context mContext;
-        int mSize = 10;
+        int mSize = 100;
 
         MyAdapter(Context context) {
             mContext = context;
@@ -130,6 +133,24 @@ public class CollagePagerDemoActivity extends Activity {
             mSize = size;
             Log.d("AAAA", "item size: " + mSize);
             notifyDataSetChanged();
+        }
+    }
+
+    class TestPageTransformer implements ViewPager.PageTransformer {
+
+        @Override
+        public void transformPage(View view, float pos) {
+            if (pos > 0 && pos <= 1) {
+                float rot = Math.abs(pos) * 30f;
+                view.setPivotY(view.getWidth() / 2);
+                view.setPivotX(view.getHeight() / 2);
+                view.setRotationY(rot);
+            } else if (pos <= 0 && pos > -1) {
+                float rot = (1 - Math.abs(pos)) * 30f;
+                view.setPivotY(view.getWidth() / 2);
+                view.setPivotX(view.getHeight() / 2);
+                view.setRotationY(rot);
+            }
         }
     }
 }
