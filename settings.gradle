@@ -1,1 +1,1 @@
-include ':SimpleCellLayout', ':SimpleCellLayoutSample'
+include ':SimpleCellLayout', ':Sample'

@@ -6,6 +6,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jlnshen.widget.celllayout.R;
+
 
 public class SimpleCellLayout extends ViewGroup {
     private int mColCount = 4;

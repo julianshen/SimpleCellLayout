@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="picasso-1.1.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/SimpleCellLayoutSample/libs/picasso-1.1.1.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-24/filestore/com.squareup.picasso/picasso/1.1.1/jar/c62362968b40fc5fdb6715945fc7876a7516a846/picasso-1.1.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
