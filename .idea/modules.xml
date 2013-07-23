@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Sample/Sample.iml" filepath="$PROJECT_DIR$/Sample/Sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/SimpleCellLayout/SimpleCellLayout.iml" filepath="$PROJECT_DIR$/SimpleCellLayout/SimpleCellLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpleCellLayout/SimpleCellLayout-SimpleCellLayout.iml" filepath="$PROJECT_DIR$/SimpleCellLayout/SimpleCellLayout-SimpleCellLayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/SimpleCellLayoutProject.iml" filepath="$PROJECT_DIR$/SimpleCellLayoutProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/simplecelllayout_re.iml" filepath="$PROJECT_DIR$/simplecelllayout_re.iml" />
     </modules>
