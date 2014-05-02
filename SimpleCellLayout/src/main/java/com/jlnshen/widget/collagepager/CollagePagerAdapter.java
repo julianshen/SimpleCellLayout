@@ -28,21 +28,22 @@ class CollagePagerAdapter extends PagerAdapter {
             {R.layout.cellcontainer_1_1},
             {R.layout.cellcontainer_2_1},
             {R.layout.cellcontainer_3_1, R.layout.cellcontainer_3_2,
-                    R.layout.cellcontainer_3_3, R.layout.cellcontainer_3_4},
+             R.layout.cellcontainer_3_3, R.layout.cellcontainer_3_4},
             {R.layout.cellcontainer_4_1, R.layout.cellcontainer_4_2,
-                    R.layout.cellcontainer_4_3, R.layout.cellcontainer_4_4,
-                    R.layout.cellcontainer_4_5, R.layout.cellcontainer_4_6,
-                    R.layout.cellcontainer_4_7, R.layout.cellcontainer_4_8,
-                    R.layout.cellcontainer_4_9, R.layout.cellcontainer_4_10},
+             R.layout.cellcontainer_4_3, R.layout.cellcontainer_4_4,
+             R.layout.cellcontainer_4_5, R.layout.cellcontainer_4_6,
+             R.layout.cellcontainer_4_7, R.layout.cellcontainer_4_8,
+             R.layout.cellcontainer_4_9, R.layout.cellcontainer_4_10},
             {R.layout.cellcontainer_5_1, R.layout.cellcontainer_5_2,
-                    R.layout.cellcontainer_5_3, R.layout.cellcontainer_5_4,
-                    R.layout.cellcontainer_5_5, R.layout.cellcontainer_5_6,
-                    R.layout.cellcontainer_5_7, R.layout.cellcontainer_5_8,
-                    R.layout.cellcontainer_5_9, R.layout.cellcontainer_5_10,
-                    R.layout.cellcontainer_5_11, R.layout.cellcontainer_5_12,
-                    R.layout.cellcontainer_5_13, R.layout.cellcontainer_5_14}
+             R.layout.cellcontainer_5_3, R.layout.cellcontainer_5_4,
+             R.layout.cellcontainer_5_5, R.layout.cellcontainer_5_6,
+             R.layout.cellcontainer_5_7, R.layout.cellcontainer_5_8,
+             R.layout.cellcontainer_5_9, R.layout.cellcontainer_5_10,
+             R.layout.cellcontainer_5_11, R.layout.cellcontainer_5_12,
+             R.layout.cellcontainer_5_13, R.layout.cellcontainer_5_14}
     };
-    SparseArray<ArrayList<SimpleCellLayout>> mCellContainerRecyler = new SparseArray<ArrayList<SimpleCellLayout>>();
+    SparseArray<ArrayList<SimpleCellLayout>> mCellContainerRecyler
+            = new SparseArray<ArrayList<SimpleCellLayout>>();
     SparseArray<ArrayList<View>> mItemViewRecycler = new SparseArray<ArrayList<View>>();
     private ListAdapter mListAdapter = null;
     private ArrayList<PageInfo> pages = new ArrayList<PageInfo>();
@@ -245,7 +246,9 @@ class CollagePagerAdapter extends PagerAdapter {
         }
 
         cellContainer.setGap(mGap);
-        cellContainer.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        cellContainer.setLayoutParams(
+                new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT));
         container.addView(cellContainer);
 
         for (int i = 0; i < page.cellCnt; i++) {
@@ -260,7 +263,8 @@ class CollagePagerAdapter extends PagerAdapter {
             }
 
             View itemView = mListAdapter.getView(cellIdx, convertView, cells[i]);
-            itemView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            itemView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT));
             cells[i].addView(itemView);
             cells[i].setTag(itemView);
         }

@@ -13,10 +13,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.jlnshen.widget.collagepager.CollagePager;
+import com.jlnshen.widget.collagepager.VerticalCollagePager;
 import com.jlnshen.widget.collagepager.ZoomFlyPageTransformer;
 import com.squareup.picasso.Picasso;
 
-public class CollagePagerDemoActivity extends Activity {
+public class VerticalCollagePagerDemoActivity extends Activity {
     static final String[] photos = new String[]{
             "http://3.bp.blogspot.com/-mYajmn9TuD0/UX3KXKx1MuI/AAAAAAAADos/zuNis2Jebeo/s200/DOCTOR-WHO-10.jpg",
             "http://www.blastr.com/sites/blastr/files/styles/content_panes_media/public/images/DoctorWhoJacketLEAD_0.jpg",
@@ -52,9 +53,9 @@ public class CollagePagerDemoActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.collagepagerdemo);
+        setContentView(R.layout.verticalcollagepagerdemo);
 
-        CollagePager pager = (CollagePager) findViewById(R.id.collagePager);
+        VerticalCollagePager pager = (VerticalCollagePager) findViewById(R.id.collagePager);
         myAdapter = new MyAdapter(this);
         pager.setPageTransformer(false, new ZoomFlyPageTransformer());
         pager.setAdapter(myAdapter);

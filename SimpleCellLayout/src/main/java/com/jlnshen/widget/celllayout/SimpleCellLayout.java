@@ -6,8 +6,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jlnshen.widget.celllayout.R;
-
 
 public class SimpleCellLayout extends ViewGroup {
     private int mColCount = 4;
@@ -93,12 +91,15 @@ public class SimpleCellLayout extends ViewGroup {
         int heightMeasureSpecMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightMeasureSpecSize = MeasureSpec.getSize(heightMeasureSpec);
 
-        if (widthMeasureSpecMode == MeasureSpec.UNSPECIFIED || heightMeasureSpecMode == MeasureSpec.UNSPECIFIED) {
+        if (widthMeasureSpecMode == MeasureSpec.UNSPECIFIED ||
+                heightMeasureSpecMode == MeasureSpec.UNSPECIFIED) {
             throw new RuntimeException("Cannot have UNSPECIFIED dimension");
         }
 
-        int usableWidth = widthMeasureSpecSize - getPaddingLeft() - getPaddingRight() - mGap * (mColCount - 1);
-        int usableHeight = heightMeasureSpecSize - getPaddingTop() - getPaddingBottom() - mGap * (mRowCount - 1);
+        int usableWidth = widthMeasureSpecSize - getPaddingLeft() - getPaddingRight() -
+                mGap * (mColCount - 1);
+        int usableHeight = heightMeasureSpecSize - getPaddingTop() - getPaddingBottom() -
+                mGap * (mRowCount - 1);
 
         int cellWidth = usableWidth / mColCount;
         int cellHeight = usableHeight / mRowCount;
@@ -136,14 +137,18 @@ public class SimpleCellLayout extends ViewGroup {
             int left = cells[params.cellY][params.cellX].left;
             int top = cells[params.cellY][params.cellX].top;
 
-            int right = cells[params.cellY + params.cellRowSpan - 1][params.cellX + params.cellColSpan - 1].right;
-            int bottom = cells[params.cellY + params.cellRowSpan - 1][params.cellX + params.cellColSpan - 1].bottom;
+            int right = cells[params.cellY + params.cellRowSpan - 1][
+                    params.cellX + params.cellColSpan - 1].right;
+            int bottom = cells[params.cellY + params.cellRowSpan - 1][
+                    params.cellX + params.cellColSpan - 1].bottom;
 
             int childWidth = right - left + 1;
             int childHeight = bottom - top + 1;
 
-            int childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(childWidth, MeasureSpec.EXACTLY);
-            int childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(childHeight, MeasureSpec.EXACTLY);
+            int childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(childWidth,
+                    MeasureSpec.EXACTLY);
+            int childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(childHeight,
+                    MeasureSpec.EXACTLY);
 
             child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
 

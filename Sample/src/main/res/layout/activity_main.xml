@@ -6,49 +6,49 @@
                 tools:context=".MainActivity">
 
     <com.jlnshen.widget.celllayout.SimpleCellLayout
+        android:id="@+id/celllayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="3dp"
+        celllayout:col="4"
+        celllayout:gapsize="3dp"
+        celllayout:row="4">
+
+        <ImageView
+            android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="3dp"
-            celllayout:col="4"
-            celllayout:row="4"
-            celllayout:gapsize="3dp"
-            android:id="@+id/celllayout">
+            celllayout:cellX="0"
+            celllayout:cellY="0"
+            celllayout:colspan="2"
+            celllayout:rowspan="2"/>
 
         <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                celllayout:cellX="0"
-                celllayout:cellY="0"
-                celllayout:colspan="2"
-                celllayout:rowspan="2"/>
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            celllayout:cellX="2"
+            celllayout:cellY="0"
+            celllayout:colspan="2"
+            celllayout:rowspan="1"/>
 
         <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                celllayout:cellX="2"
-                celllayout:cellY="0"
-                celllayout:colspan="2"
-                celllayout:rowspan="1"/>
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            celllayout:cellX="2"
+            celllayout:cellY="1"
+            celllayout:colspan="2"
+            celllayout:rowspan="1"/>
 
         <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                celllayout:cellX="2"
-                celllayout:cellY="1"
-                celllayout:colspan="2"
-                celllayout:rowspan="1"/>
-
-        <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                celllayout:cellX="0"
-                celllayout:cellY="2"
-                celllayout:colspan="4"
-                celllayout:rowspan="2"/>
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            celllayout:cellX="0"
+            celllayout:cellY="2"
+            celllayout:colspan="4"
+            celllayout:rowspan="2"/>
 
     </com.jlnshen.widget.celllayout.SimpleCellLayout>
 

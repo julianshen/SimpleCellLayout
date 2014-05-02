@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <com.jlnshen.widget.celllayout.SimpleCellLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:celllayout="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        celllayout:col="1"
-        celllayout:row="1"
-        android:id="@+id/celllayout">
+    android:id="@+id/celllayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:celllayout="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    celllayout:col="1"
+    celllayout:row="1">
 
     <FrameLayout
-            android:id="@+id/simple_cell1"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            />
+        android:id="@+id/simple_cell1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 </com.jlnshen.widget.celllayout.SimpleCellLayout>

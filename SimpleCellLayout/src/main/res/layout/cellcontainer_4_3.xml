@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <com.jlnshen.widget.celllayout.SimpleCellLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:celllayout="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/celllayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:celllayout="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    celllayout:col="2"
+    celllayout:row="3">
+
+    <FrameLayout
+        android:id="@+id/simple_cell1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        celllayout:col="2"
-        celllayout:row="3"
-        android:id="@+id/celllayout">
+        celllayout:cellX="0"
+        celllayout:cellY="0"
+        />
 
     <FrameLayout
-            android:id="@+id/simple_cell1"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            celllayout:cellX="0"
-            celllayout:cellY="0"
-            />
+        android:id="@+id/simple_cell2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        celllayout:cellX="1"
+        celllayout:cellY="0"
+        />
 
     <FrameLayout
-            android:id="@+id/simple_cell2"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            celllayout:cellX="1"
-            celllayout:cellY="0"
-            />
+        android:id="@+id/simple_cell3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        celllayout:cellX="0"
+        celllayout:cellY="1"
+        celllayout:colspan="2"
+        />
 
     <FrameLayout
-            android:id="@+id/simple_cell3"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            celllayout:cellX="0"
-            celllayout:cellY="1"
-            celllayout:colspan="2"
-            />
-
-    <FrameLayout
-            android:id="@+id/simple_cell4"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            celllayout:cellX="0"
-            celllayout:cellY="2"
-            celllayout:colspan="2"
-            />
+        android:id="@+id/simple_cell4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        celllayout:cellX="0"
+        celllayout:cellY="2"
+        celllayout:colspan="2"
+        />
 </com.jlnshen.widget.celllayout.SimpleCellLayout>

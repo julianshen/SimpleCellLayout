@@ -31,7 +31,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int[] imageViewIds = new int[]{R.id.imageView1, R.id.imageView2, R.id.imageView3, R.id.imageView4};
+        int[] imageViewIds = new int[]{R.id.imageView1, R.id.imageView2, R.id.imageView3,
+                                       R.id.imageView4};
         int i = 0;
 
         for (int res_id : imageViewIds) {
@@ -46,6 +47,11 @@ public class MainActivity extends Activity {
         MenuItem item = menu.add("CollagePager Demo");
 
         Intent intent = new Intent(this, CollagePagerDemoActivity.class);
+        item.setIntent(intent);
+
+        item = menu.add("VerticalCollagePager Demo");
+
+        intent = new Intent(this, VerticalCollagePagerDemoActivity.class);
         item.setIntent(intent);
         return super.onCreateOptionsMenu(menu);
     }

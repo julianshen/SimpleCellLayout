@@ -1,4 +1,4 @@
-<com.jlnshen.widget.collagepager.CollagePager android:id="@+id/collagePager"
+<com.jlnshen.widget.collagepager.VerticalCollagePager android:id="@+id/collagePager"
                                               xmlns:android="http://schemas.android.com/apk/res/android"
                                               xmlns:celllayout="http://schemas.android.com/apk/res-auto"
                                               xmlns:tools="http://schemas.android.com/tools"
@@ -9,4 +9,4 @@
                                               tools:context=".CollagePagerDemoActivity">
 
 
-</com.jlnshen.widget.collagepager.CollagePager>
+</com.jlnshen.widget.collagepager.VerticalCollagePager>

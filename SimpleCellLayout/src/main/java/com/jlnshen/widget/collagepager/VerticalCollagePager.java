@@ -4,20 +4,17 @@ package com.jlnshen.widget.collagepager;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.widget.ListAdapter;
 
 import com.jlnshen.widget.celllayout.R;
 
-public class CollagePager extends ViewPager {
+import fr.castorflex.android.verticalviewpager.VerticalViewPager;
+
+public class VerticalCollagePager extends VerticalViewPager {
     private int mGap = 0;
 
-    public CollagePager(Context context) {
-        super(context);
-    }
-
-    public CollagePager(Context context, AttributeSet attrs) {
+    public VerticalCollagePager(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SimpleCellLayout);
@@ -32,6 +29,10 @@ public class CollagePager extends ViewPager {
         }
 
         a.recycle();
+    }
+
+    public VerticalCollagePager(Context context) {
+        super(context);
     }
 
     @Override
