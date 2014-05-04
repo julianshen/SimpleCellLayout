@@ -1,4 +1,15 @@
 apply plugin: 'android-library'
+apply plugin: 'maven'
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: "file://maven_deploy")
+        pom {
+            version = '1.0.0'
+            artifactId = 'SimpleCellLayout'
+            groupId = 'com.jlnshen.widget.celllayout'
+        }
+    }
+}
 
 
 dependencies {
