@@ -51,6 +51,10 @@ public class VerticalCollagePager extends VerticalViewPager {
             return false;
         }
 
-        return getCurrentItem() != 0;
+        if(direction < 0) {
+            return getCurrentItem() != 0;
+        } else {
+            return getCurrentItem() < getAdapter().getCount();
+        }
     }
 }
