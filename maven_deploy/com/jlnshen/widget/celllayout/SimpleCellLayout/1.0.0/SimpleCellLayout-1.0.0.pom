@@ -8,15 +8,15 @@
   <packaging>aar</packaging>
   <dependencies>
     <dependency>
-      <groupId>com.android.support</groupId>
-      <artifactId>support-v4</artifactId>
-      <version>+</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>com.github.castorflex.verticalviewpager</groupId>
       <artifactId>library</artifactId>
       <version>19.0.1+</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.android.support</groupId>
+      <artifactId>support-v4</artifactId>
+      <version>19+</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>

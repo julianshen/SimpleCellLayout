@@ -44,4 +44,9 @@ public class VerticalCollagePager extends VerticalViewPager {
     public void setAdapter(ListAdapter adapter) {
         super.setAdapter(new CollagePagerAdapter(adapter, mGap));
     }
+
+    @Override
+    public boolean canScrollVertically(int direction) {
+        return true;
+    }
 }

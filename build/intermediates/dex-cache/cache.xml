@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/julian/dev/SimpleCellLayout/Sample/build/intermediates/pre-dexed/debug/classes-86f6a651994542a6b5ebdb76214d39bdca42f698.jar"
+        jar="/Users/julian/dev/SimpleCellLayout/Sample/build/intermediates/exploded-aar/SimpleCellLayout/SimpleCellLayout/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="a322d87798c51ee3ca32a22275cac4e6c562debc"/>
+    <item
+        dex="/Users/julian/dev/SimpleCellLayout/Sample/build/intermediates/pre-dexed/debug/support-v4-19.1.0-fe930dc68beb1e566675ce71b270d4091c6c249b.jar"
+        jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="/Users/julian/dev/SimpleCellLayout/Sample/build/intermediates/pre-dexed/debug/classes-677bdc8f7db39fe945938ade0b5e94c9af5f1d46.jar"
+        jar="/Users/julian/dev/SimpleCellLayout/Sample/build/intermediates/exploded-aar/com.github.castorflex.verticalviewpager/library/19.0.1/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="cac65d41873c63e90b9406c9dbccc05b15113c45"/>
+    <item
+        dex="/Users/julian/dev/SimpleCellLayout/Sample/build/intermediates/pre-dexed/debug/picasso-1.1.1-bda5d9b9fde1e64cc4d5b58559bc40784f802b2d.jar"
+        jar="/Users/julian/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/1.1.1/c62362968b40fc5fdb6715945fc7876a7516a846/picasso-1.1.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="c62362968b40fc5fdb6715945fc7876a7516a846"/>
+
+</pre-dex-items>

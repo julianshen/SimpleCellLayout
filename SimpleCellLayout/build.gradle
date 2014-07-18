@@ -14,13 +14,13 @@ uploadArchives {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-v4:+'
+    compile 'com.android.support:support-v4:19+'
     compile 'com.github.castorflex.verticalviewpager:library:19.0.1+'
 }
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.3"
+    buildToolsVersion "20.0.0"
 
     defaultConfig {
         minSdkVersion 16
