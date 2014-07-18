@@ -6,7 +6,7 @@
         jar="/Users/julian/dev/SimpleCellLayout/Sample/build/intermediates/exploded-aar/SimpleCellLayout/SimpleCellLayout/unspecified/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="a322d87798c51ee3ca32a22275cac4e6c562debc"/>
+        sha1="e89a19b36a1c4575ca18a2af28558ecc7c4ab788"/>
     <item
         dex="/Users/julian/dev/SimpleCellLayout/Sample/build/intermediates/pre-dexed/debug/support-v4-19.1.0-fe930dc68beb1e566675ce71b270d4091c6c249b.jar"
         jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"

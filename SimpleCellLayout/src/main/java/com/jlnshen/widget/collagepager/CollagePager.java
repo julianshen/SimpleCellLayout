@@ -43,9 +43,4 @@ public class CollagePager extends ViewPager {
     public void setAdapter(ListAdapter adapter) {
         super.setAdapter(new CollagePagerAdapter(adapter, mGap));
     }
-
-    @Override
-    public boolean canScrollHorizontally(int direction) {
-        return true;
-    }
 }

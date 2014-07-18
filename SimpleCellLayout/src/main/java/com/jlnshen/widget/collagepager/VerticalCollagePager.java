@@ -47,6 +47,10 @@ public class VerticalCollagePager extends VerticalViewPager {
 
     @Override
     public boolean canScrollVertically(int direction) {
-        return true;
+        if(getAdapter() == null) {
+            return false;
+        }
+
+        return getCurrentItem() != 0;
     }
 }
